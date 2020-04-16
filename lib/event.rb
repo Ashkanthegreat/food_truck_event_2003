@@ -41,10 +41,11 @@ class Event
   end
 
   def sorted_item_list
-
-    total_inventory.find_all do |item, food_truck|
-      item.name 
+    sorted_items = []
+    total_inventory.each do |item, food_truck|
+      sorted_items << item.name
     end
+    sorted_items.sort
   end
 
 
